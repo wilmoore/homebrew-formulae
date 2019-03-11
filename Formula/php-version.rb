@@ -2,7 +2,7 @@ class PhpVersion < Formula
   desc "stupid simple PHP version management"
   homepage "https://github.com/wilmoore/php-version#simple-php-version-switching"
   url "https://github.com/wilmoore/php-version/archive/0.13.0.tar.gz"
-  sha256 "e5f54ee62d6f7f9397e6cac2affd4c7f8b0e9d68deb5d7db267f40483a2b9352"
+  sha256 "5ca48f1e478b691072f4c2c62827f3cc063687cb54fe7c8eb6168a9924991ac5"
   head "https://github.com/wilmoore/php-version.git"
 
   def install
