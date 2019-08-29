@@ -9,6 +9,6 @@ class AwsIamAuthenticator < Formula
   end
 
   test do
-    system bin/"aws-iam-authenticator", "version" "2>&1"
+    system "#{bin}/aws-iam-authenticator", "version", "2>&1"
   end
 end
