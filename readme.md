@@ -1,5 +1,5 @@
 # Homebrew Formulae
-> A [Homebrew tap][] by [@wilmoore][].
+> [brew tap][] by [@wilmoore][].
 
 ## Usage
 
@@ -27,4 +27,4 @@ Submit pull requests against the respective repos:
 
 [./Formula]: https://github.com/wilmoore/homebrew-formulae/tree/master/Formula
 [@wilmoore]: https://github.com/wilmoore
-[Homebrew tap]: https://github.com/Homebrew/brew/blob/master/docs/Taps.md
+[brew tap]: https://github.com/Homebrew/brew/blob/master/docs/Taps.md
