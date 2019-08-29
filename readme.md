@@ -7,11 +7,11 @@ Packages in located in the [./Formula][] directory can be installed via canonica
 
     brew install wilmoore/formulae/aws-iam-authenticator
 
-Tap this repository:
+or, add the `wilmoore/formulae` tap:
 
     brew tap wilmoore/formulae
 
-Install packages contained in the tap:
+then, install packages contained in the tap:
 
     brew install aws-iam-authenticator
     brew install php-version
