@@ -5,7 +5,7 @@ class AwsIamAuthenticator < Formula
   sha256 "a88457e5b4292a8086ead1062bc51a7ecef6811a4845b3ee70d80dcff6a1ad33"
 
   def install
-    prefix.install "bin"
+    bin.install "aws-iam-authenticator"
   end
 
   test do
