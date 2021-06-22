@@ -5,7 +5,7 @@
 
 Packages in located in the [./Formula][] directory can be installed via canonical formula path:
 
-    brew install wilmoore/formulae/zecwallet-cli
+    brew install --verbose wilmoore/formulae/zecwallet-cli
 
 or, add the `wilmoore/formulae` tap:
 
