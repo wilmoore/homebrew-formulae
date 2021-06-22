@@ -8,4 +8,8 @@ class ZecwalletCli < Formula
   def install
     bin.install "zecwallet-cli"
   end
+
+  test do
+    system "#{bin}/zecwallet-cli", "--version", "2>&1"
+  end
 end
