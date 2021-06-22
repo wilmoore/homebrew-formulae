@@ -1,4 +1,5 @@
 class ZecwalletCli < Formula
+  version "1.7.0-beta2"
   desc "ZecWallet Lightclient CLI"
   homepage "https://github.com/adityapk00/zecwallet-light-cli"
   url "https://github.com/adityapk00/zecwallet-light-cli/releases/download/1.7.0-beta2/macOS-zecwallet-cli-v1.7.0.beta2.zip"
