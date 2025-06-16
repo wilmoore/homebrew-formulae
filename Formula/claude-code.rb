@@ -9,8 +9,8 @@ class ClaudeCode < Formula
 
   depends_on "node"
 
-  def pour_bottle?
-    false
+  def skip_fix_install_names?
+    true
   end
 
   def install
