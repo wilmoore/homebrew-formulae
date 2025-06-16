@@ -9,16 +9,20 @@ class ClaudeCode < Formula
 
   depends_on "node"
 
-  def skip_fix_install_names?
-    true
-  end
-
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    # Unpack the tarball manually
+    system "tar", "-xzf", cached_download, "--strip-components=1"
+
+    # Install everything into libexec
+    libexec.install Dir["*"]
+
+    # Create a wrapper or symlink
+    bin.install_symlink libexec/"bin/claude"
   end
 
   test do
-    assert_match "claude", shell_output("#{bin}/claude --help")
+    # Verify the CLI works
+    assert_match "Usage", shell_output("#{bin}/claude --help")
   end
+
 end
