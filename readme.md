@@ -5,7 +5,7 @@
 
 Packages in located in the [./Formula][] directory can be installed via canonical formula path:
 
-    brew install --verbose wilmoore/formulae/zecwallet-cli
+    brew install --verbose wilmoore/formulae/claude-code
 
 or, add the `wilmoore/formulae` tap:
 
@@ -14,6 +14,7 @@ or, add the `wilmoore/formulae` tap:
 then, install packages contained in the tap:
 
     brew install aws-iam-authenticator
+    brew install claude-code
     brew install php-version
     brew install zecwallet-cli
 
