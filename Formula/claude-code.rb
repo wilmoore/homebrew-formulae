@@ -10,18 +10,19 @@ class ClaudeCode < Formula
   depends_on "node"
 
   def install
-    # Unpack the tarball manually
-    system "tar", "-xzf", cached_download, "--strip-components=1"
+    # Unpack npm tarball into a temp directory
+    mkdir "src"
+    system "tar", "-xzf", cached_download, "-C", "src"
 
-    # Install everything into libexec
-    libexec.install Dir["*"]
-
-    # Create a wrapper or symlink
-    bin.install_symlink libexec/"bin/claude"
+    # The npm tarball unpacks to a folder called `package/`
+    cd "src/package" do
+      # Install everything into libexec
+      libexec.install Dir["*"]
+      bin.install_symlink libexec/"bin/claude"
+    end
   end
 
   test do
-    # Verify the CLI works
     assert_match "Usage", shell_output("#{bin}/claude --help")
   end
 
