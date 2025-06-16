@@ -10,20 +10,20 @@ class ClaudeCode < Formula
   depends_on "node"
 
   def install
-    # Unpack npm tarball into a temp directory
-    mkdir "src"
-    system "tar", "-xzf", cached_download, "-C", "src"
+    # Install into libexec using npm
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
 
-    # The npm tarball unpacks to a folder called `package/`
-    cd "src/package" do
-      # Install everything into libexec
-      libexec.install Dir["*"]
-      bin.install_symlink libexec/"bin/claude"
-    end
+    # Create executable that invokes node with ESM flags
+    (bin/"claude").write <<~EOS
+      #!/bin/bash
+      exec "#{Formula["node"].opt_bin}/node" --no-warnings --enable-source-maps "#{libexec}/cli.js" "$@"
+    EOS
+
+    chmod "+x", bin/"claude"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/claude --help")
+    system "#{bin}/claude", "--help"
   end
 
 end
